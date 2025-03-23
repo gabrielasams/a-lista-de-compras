@@ -1,13 +1,12 @@
-# Desafio: A Lista de Compras 📝
+<h1 id="readme-top"> Desafio: A Lista de Compras 📝</h2>
 
 _Read this in other languages:_  
 [_English_](./translations/README-EN.md)  
 
 ![licence mit](https://img.shields.io/badge/licence-MIT-blue.svg)  ![status](https://img.shields.io/badge/status-em_desenvolvimento-green)  
 
-<!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Conteúdo</summary>
+  <summary><b>Conteúdo</b></summary>
   <ol>
     <li>
       <a href="#about-the-project">Sobre o Projeto</a>
@@ -23,20 +22,23 @@ _Read this in other languages:_
       </ul>
     </li>
     <li><a href="#usage">Caso de Uso</a></li>
-    <li><a href="#contributing">Contribuição</a></li>
+    <li><a href="#contributing">Contribuições</a>
+    <ul>
+        <li><a href="#how-do-it">Como Fazer</a></li>
+      </ul>
+    </li>
     <li><a href="#license">Licença</a></li>
     <a></li>
   </ol>
 </details> 
 
-<!-- ABOUT THE PROJECT -->
-## Sobre o Projeto
+<h2 id="about-the-project"><p align="center">Sobre o Projeto</p></h2>
 
-Este aplicativo foi desenvolvido em [Python](https://www.python.org/), permite que o usuário gerencie uma lista de compras com permissão para adicionar, remover e pesquisar os produtos adicionados nela. Requisito para aprovação no Desafio de Aprendizagem do Módulo 3 do curso [_Pensamento Computacional com Python_](https://www.ticemtrilhas.org.br/trail/b201ce44-d4ff-4f3c-a201-22f0d2c17991), da [TIC em trilhas](https://www.ticemtrilhas.org.br).
+Este aplicativo foi desenvolvido em [Python](https://www.python.org/), permite que o usuário gerencie uma lista de compras com permissão para adicionar, remover e pesquisar os produtos adicionados nela. Requisito para aprovação no Desafio de Aprendizagem do Módulo 3 do curso [_Pensamento Computacional com Python_](https://ticemtrilhas.org.br/trail/b201ce44-d4ff-4f3c-a201-22f0d2c17991), da [TIC em trilhas](https://ticemtrilhas.org.br).
 
 <p align="right">(<a href="#readme-top">voltar ao início</a>)</p>
 
-### Funcionalidades
+<h3 id="features">Funcionalidades</h3>
 
 1. **Menu de Opções:** O sistema deve fornecer um menu de opções para o usuário interagir. As opções devem ser as seguintes:  
    - A. Adicionar produto  
@@ -51,8 +53,9 @@ Este aplicativo foi desenvolvido em [Python](https://www.python.org/), permite q
    - D. Mililitro  
    - E. Unidade  
    - F. Metro  
-   - G. Centímetro 
-**Essas opções devem aparecer quando o sistema perguntar a unidade de medida.**  
+   - G. Centímetro  
+   
+   **Essas opções devem aparecer quando o sistema perguntar a unidade de medida.**  
 
 3. **Controle de ID Automático:** O sistema deve atribuir automaticamente um ID único para cada produto adicionado à lista.  
 
@@ -72,15 +75,14 @@ Este aplicativo foi desenvolvido em [Python](https://www.python.org/), permite q
 
 <p align="right">(<a href="#readme-top">voltar ao início</a>)</p>
 
-<!-- GETTING STARTED -->
-## Iniciando o Projeto
-### Pré-requisitos
+<h2 id="getting-started"><p align="center">Iniciando a Aplicação</p></h2>
+<h3 id="prerequisites">Pré-requisitos</h3>
 
-- IDE [Visual Studio Code 1.98.2](https://www.code.visualstudio.com/download)
-- Extensão [Pylance _v2025.3.2_](https://www.marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-- Extensão [Python _v2025.2.0_](https://www.marketplace.visualstudio.com/items?itemName=ms-python.python)
+- IDE [Visual Studio Code 1.98.2](https://ode.visualstudio.com/download)
+- Extensão [Pylance _v2025.3.2_](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+- Extensão [Python _v2025.2.0_](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
-### Instalação
+<h3 id="installation">Instalação</h3>
 
 1. No Terminal, clone o repositório: 
 
@@ -92,14 +94,15 @@ Este aplicativo foi desenvolvido em [Python](https://www.python.org/), permite q
 
 <p align="right">(<a href="#readme-top">voltar ao início</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-## Caso de Uso
+<h2 id="usage"><p align="center">Caso de Uso</p></h2>
 _EM CONSTRUÇÃO_
 
 <p align="right">(<a href="#readme-top">voltar ao início</a>)</p>
 
-<!-- CONTRIBUTING -->
-## Contribuição
+<h2 id="contributing"><p align="center">Contribuições</p></h2>
+<h3 id="how-do-it">Como Fazer</h3>
+Saiba como sugerir melhorias e correções:
+
 1. Faça um _fork_ do repositório.
 2. Crie sua _feature branch_: `git checkout -b my-new-feature`.
 3. Adicione os arquivos para mudança:  `git add .`.
@@ -111,10 +114,10 @@ _EM CONSTRUÇÃO_
 
 **Depois que seu _pull request_ estiver unido ao repositório, você pode apagar sua _branch_ com segurança.** 
 
-<!-- LICENSE -->
-## Licença
+<h2 id="license"><p align="center">Licença</p></h2>
+
 Distribuido sob a [MIT License](https://www.github.com/gabrielasams/a-lista-de-compras/blob/main/LICENSE). Acesse para mais informação.
 
-Copyright :copyrigh: 2025 - A Lista de Compras
+Copyright © 2025 - A Lista de Compras
 
 <p align="right">(<a href="#readme-top">voltar ao início</a>)</p>
