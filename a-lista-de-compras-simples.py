@@ -1,4 +1,3 @@
-# Funções auxiliares para tratamento de entradas válidas
 def validar_entrada(texto):
     if not texto or texto.isspace():
         return False
@@ -12,7 +11,6 @@ def solicitar_entrada_valida(mensagem):
         else:
             print("Esse campo não pode ficar vazio ou conter apenas espaços! Tente novamente.")
 
-# Função que vai perguntar e mostrar as opções de unidade de medida disponíveis
 def escolher_unidade_medida(dicionario_unidade_medidas):
 
     print("Escolha uma unidade de medida: ")
@@ -29,7 +27,6 @@ def escolher_unidade_medida(dicionario_unidade_medidas):
         except Exception as e:
             print(f"Erro inesperado: {e}. Tente novamente.")
 
-# O parâmetro "contador_id" nos permite o controle de ID automático
 def adicionar_produto(contador_id, dicionario_unidade_medidas):
 
     nome = solicitar_entrada_valida("Nome: ")
