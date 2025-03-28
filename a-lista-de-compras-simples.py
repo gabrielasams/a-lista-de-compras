@@ -1,96 +1,103 @@
-def validar_entrada(texto):
-    if not texto or texto.isspace():
-        return False
-    return True
+def listar_produtos(produtos):
+    print("\n" + "=" * 30)
+    if not produtos:
+        print("Nenhum produto adicionado ainda.")
+    else:
+        print("Lista de Compras:")
+        for produto in produtos:
+            print(f"\nID: {produto['id']}")
+            print(f"Produto: {produto['nome']}")
+            print(f"Quantidade: {produto['quantidade']} {produto['unidade de medida']}")
+            print(f"Descrição: {produto['descrição']}")
+    print("=" * 30 + "\n")
 
-def solicitar_entrada_valida(mensagem):
-    while True:
-        entrada = input(mensagem)
-        if validar_entrada(entrada):
-            return entrada.strip().capitalize()
-        else:
-            print("Esse campo não pode ficar vazio ou conter apenas espaços! Tente novamente.")
+def visualizar_menu():
+    print("Bem-vinde a Lista de Compras Simples")
+    print("\nOpções:")
+    print("A - Adicionar produto")
+    print("D - Sair\n")
 
-def escolher_unidade_medida(dicionario_unidade_medidas):
-
-    print("Escolha uma unidade de medida: ")
-
-    for letra, unidade in dicionario_unidade_medidas.items():
-        print(f"{letra} - {unidade}")
-    while True:
-        try:
-            unidade_medida = input("Opção: ").upper()
-            if unidade_medida in dicionario_unidade_medidas:
-                return dicionario_unidade_medidas[unidade_medida]
-            else:
-                print("Entrada inválida! Digite uma letra entre A e G.")
-        except Exception as e:
-            print(f"Erro inesperado: {e}. Tente novamente.")
-
-def adicionar_produto(contador_id, dicionario_unidade_medidas):
-
-    nome = solicitar_entrada_valida("Nome: ")
-    unidade = escolher_unidade_medida(dicionario_unidade_medidas)
+def adicionar_produto(controleID, medidas):
+    print("\n" + "-" * 30)
+    print("Adicionar novo produto\n")
+    nome = validar_entrada("Nome: ")
+    unidade = escolher_medida(medidas)
 
     while True:
         try:
-            quantidade = input("Quantidade: ")
-            quantidade = quantidade.replace(",", ".")
+            quantidade = input("Quantidade: ").replace(",", ".")
             quantidade = float(quantidade)
-
+            
             if quantidade <= 0:
                 print("Digite um valor positivo.")
             else:
                 break
         except ValueError:
-            print("Entrada inválida! Digite um número válido (ex: 2 ou 1).")
+            print("Entrada inválida! Digite um número válido (ex: 2 ou 1.5).")
       
-    descricao = solicitar_entrada_valida("Descrição: ")
+    descricao = validar_entrada("Descrição: ")
+    print("-" * 30)
 
     produto = {
-            "id": contador_id,
-            "nome": nome,
-            "unidade de medida": unidade,
-            "quantidade": quantidade,
-            "descrição": descricao
-            }
+        "id": controleID,
+        "nome": nome,
+        "unidade de medida": unidade,
+        "quantidade": quantidade,
+        "descrição": descricao
+    }
     return produto
 
-def lista_de_compras():
-    
-    dicionario_unidade_medidas = {
-                                "A": "Quilograma",
-                                "B": "Grama",
-                                "C": "Litro",
-                                "D": "Mililitro",
-                                "E": "Unidade",
-                                "F": "Metro",
-                                "G": "Centímetro"
-                                }
-    
-    lista_produtos = []
-    contador_id = 1
+def validar_texto(texto):
+    return texto and not texto.isspace()
+
+def validar_entrada(mensagem):
+    while True:
+        entrada = input(mensagem).strip()
+        if validar_texto(entrada):
+            return entrada.capitalize()
+        print("Esse campo não pode ficar vazio! Tente novamente.")
+
+def escolher_medida(medidas):
+    print("\nEscolha a unidade de medida:")
+    for letra, unidade in medidas.items():
+        print(f"{letra} - {unidade}")
 
     while True:
+        opcao = input("\nOpção: ").upper()
+        if opcao in medidas:
+            return medidas[opcao]
+        print("Opção inválida! Digite uma letra de A a G.")
 
-        print("\nBem-vinde a Lista de Compras Simples")
-        print("A - Adicionar produto")
-        print("D - Sair da Lista de Compras Simples")
+def iniciar_sistema():
+    dicionario_unidade_medidas = {
+        'A': 'Quilograma',
+        'B': 'Grama',
+        'C': 'Litro',
+        'D': 'Mililitro',
+        'E': 'Unidade',
+        'F': 'Metro',
+        'G': 'Centímetro'
+    }
+    
+    lista_produtos = []
+    controle_id = 1
 
-        opcao = input("Escolha uma opção: ").upper()
+    while True:
+        listar_produtos(lista_produtos)
+        visualizar_menu()
+
+        opcao = input("Escolha uma opção: ").upper().strip()
 
         if opcao == 'D':
-            print("Obrigada por utilizar a Lista de Compras Simples!")
+            print("\nObrigada por utilizar a Lista de Compras Simples!")
             break
         
-        if opcao not in ['A', 'B', 'C', 'D']:
-            print("Opção inválida! Tente novamente.")
-            continue
-
-        elif opcao == 'A':
-            produto = adicionar_produto(contador_id, dicionario_unidade_medidas)
+        if opcao == 'A':
+            produto = adicionar_produto(controle_id, dicionario_unidade_medidas)
             lista_produtos.append(produto)
-            print(f"Produto '{produto['nome']}' adicionado com sucesso! ID: {produto['id']}")
-            contador_id += 1
+            print(f"\nProduto '{produto['nome']}' adicionado com sucesso! (ID: {produto['id']})")
+            controle_id += 1
+        else:
+            print("\nOpção inválida! Digite 'A' para adicionar ou 'D' para sair.")
 
-lista_de_compras()
+iniciar_sistema()
