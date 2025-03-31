@@ -14,8 +14,10 @@ def listar_produtos(produtos):
 def visualizar_menu():
     print("Bem-vinde a Lista de Compras Simples")
     print("\nOpções:")
-    print("A - Adicionar produto")
-    print("D - Sair\n")
+    print("A. Adicionar produto")
+    print("B. Remover produto ")
+    print("C. Pesquisar produto")
+    print("D. Sair\n")
 
 def adicionar_produto(controleID, medidas):
     print("\n" + "-" * 30)
@@ -68,6 +70,56 @@ def escolher_medida(medidas):
             return medidas[opcao]
         print("Opção inválida! Digite uma letra de A a G.")
 
+def remover_produto(produtos):
+    if not produtos:
+        print("\nNenhum produto cadastrado para remover.\n")
+        return produtos
+    
+    listar_produtos(produtos)
+    
+    try:
+        id_remover = int(input("\nDigite o ID do produto que deseja remover: "))
+    except ValueError:
+        print("\nID inválido! Digite apenas números.\n")
+        return produtos
+    
+    for i, produto in enumerate(produtos):
+        if produto['id'] == id_remover:
+            while True:
+                confirmacao = input(f"Tem certeza que deseja remover '{produto['nome']}' (ID: {produto['id']})? [S/N]: ").strip().upper()
+                
+                if confirmacao in ['S', 'SIM']:
+                    produto_removido = produtos.pop(i)
+                    print(f"\nProduto '{produto_removido['nome']}' removido com sucesso!\n")
+                    return produtos
+                elif confirmacao in ['N', 'NÃO', 'NAO']:
+                    print("\nOperação cancelada.\n")
+                    return produtos
+                else:
+                    print("\nOpção inválida! Digite 'S' para SIM ou 'N' para NÃO.\n")
+    
+    print("\nNenhum produto encontrado com o ID informado.\n")
+    return produtos
+
+def pesquisar_produto(produtos):
+    pesquisa = input("\nDigite o nome ou parte do nome do produto: ").strip().lower()
+    resultados = []
+    
+    for produto in produtos:
+        if pesquisa in produto['nome'].lower():
+            resultados.append(produto)
+    
+    if not resultados:
+        print("\nNenhum produto encontrado com esse termo.\n")
+    else:
+        print(f"\n{len(resultados)} produto(s) encontrado(s):")
+        for produto in resultados:
+            print(f"\nID: {produto['id']}")
+            print(f"Nome: {produto['nome']}")
+            print(f"Quantidade: {produto['quantidade']} {produto['unidade de medida']}")
+            print(f"Descrição: {produto['descrição']}")
+        print()
+
 def iniciar_sistema():
     dicionario_unidade_medidas = {
         'A': 'Quilograma',
@@ -92,12 +144,22 @@ def iniciar_sistema():
             print("\nObrigada por utilizar a Lista de Compras Simples!")
             break
         
-        if opcao == 'A':
+        elif opcao == 'A':
             produto = adicionar_produto(controle_id, dicionario_unidade_medidas)
             lista_produtos.append(produto)
             print(f"\nProduto '{produto['nome']}' adicionado com sucesso! (ID: {produto['id']})")
             controle_id += 1
+
+        elif opcao == 'B':
+            lista_produtos = remover_produto(lista_produtos)
+
+        elif opcao == 'C':
+            if not lista_produtos:
+                print("\nNenhum produto cadastrado para pesquisar.\n")
+            else:
+                pesquisar_produto(lista_produtos)
+
         else:
-            print("\nOpção inválida! Digite 'A' para adicionar ou 'D' para sair.")
+            print("\nOpção inválida!")
 
 iniciar_sistema()
