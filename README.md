@@ -3,7 +3,7 @@
 _Read this in other languages:_  
 [_English_](./translations/README-EN.md)  
 
-![license mit](https://img.shields.io/badge/license-MIT-blue.svg)  ![status](https://img.shields.io/badge/status-em_desenvolvimento-green)  
+![license mit](https://img.shields.io/badge/license-MIT-blue.svg)  ![status](https://img.shields.io/badge/status-finalizado-green)  
 
 <details>
   <summary><b>Conteúdo</b></summary>
@@ -21,7 +21,6 @@ _Read this in other languages:_
         <li><a href="#installation">Instalação</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Caso de Uso</a></li>
     <li><a href="#contributing">Contribuições</a>
     <ul>
         <li><a href="#how-do-it">Como Fazer</a></li>
@@ -91,11 +90,6 @@ Este aplicativo foi desenvolvido em [Python](https://www.python.org/), permite q
    ```
 2. Abra a pasta com os arquivos do repositório na IDE recomendada.
 3. Execute no Terminal da própria IDE.
-
-<p align="right">(<a href="#readme-top">voltar ao início</a>)</p>
-
-<h2 id="usage"><p align="center">Caso de Uso</p></h2>
-_EM CONSTRUÇÃO_
 
 <p align="right">(<a href="#readme-top">voltar ao início</a>)</p>
 

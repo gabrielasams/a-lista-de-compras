@@ -1,7 +1,7 @@
 
 <h1 id="readme-top">Challenge: The Shopping List 📝</h2>
 
-![license mit](https://img.shields.io/badge/license-MIT-blue.svg)  ![status](https://img.shields.io/badge/status-developing-green)  
+![license mit](https://img.shields.io/badge/license-MIT-blue.svg)  ![status](https://img.shields.io/badge/status-finished-green)  
 
 <details>
   <summary><b>Content</b></summary>
@@ -19,7 +19,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a>
     <ul>
         <li><a href="#how-do-it">How to Do</a></li>
@@ -89,11 +88,6 @@ This application was developed in [Python](https://www.python.org/) and allows t
    ```
 2. Open the folder with the repository files in the recommended IDE.
 3. Run it in the IDE's own Terminal.
-
-<p align="right">(<a href="#readme-top">Return to top</a>)</p>
-
-<h2 id="usage"><p align="center">Usage</p></h2>
-_DEVELOPING_
 
 <p align="right">(<a href="#readme-top">Return to top</a>)</p>
 
