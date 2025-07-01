@@ -110,7 +110,7 @@ Saiba como sugerir melhorias e correções:
 
 <h2 id="license"><p align="center">Licença</p></h2>
 
-Distribuido sob a [MIT License](https://www.github.com/gabrielasams/a-lista-de-compras/blob/main/LICENSE). Acesse para mais informação.
+Distribuído sob a [MIT License](https://www.github.com/gabrielasams/a-lista-de-compras/blob/main/LICENSE). Acesse para mais informação.
 
 Copyright © 2025 - A Lista de Compras
 
